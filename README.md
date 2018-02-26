@@ -3,17 +3,33 @@
 DGI official front end assignment.
 
 #### Table of contents
-* [1. Frontend assignment](#1-frontend-assignment)
+* [1. Frontend assignment](#1-frontend-assignment-instructions)
 * [2. Frontend assignment structure](#2-frontend-assignment-structure)
 * [3. Installation](#3-installation)
 * [4. Building & compiling](#4-building--compiling)
 * [5. Scss file structure](#5-scss-file-structure)
 * [6. Working with javascripts](#6-working-with-javascripts)
 
-## 1. Frontend assignment
-We need you to build a small widget, listing images from the nasa API
+## 1. Frontend assignment instructions
+In this assignment we would like you to show us your work with HTML, styling and javascript.
+Follow the instructions below, you can spend as much time as you want on the assignment, but probably you need to spend atleast a few hours.
 
-The task should demonstrate how you work with HTML markup in the index.html, we have implemented Bootstrap (v.4.0.0) in this assignment
+We need you to build a small widget, listing images from Nasa Mars Rover photos:
+https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY
+
+The data should be presented as a list. 
+Each list element should contain an image, rover name, camera name and earthdate.
+
+Possible extensions:
+- Add possibility to filter list by rover or camera
+
+We have placed a static version of the response in docs/data/nasa.json
+```zsh
+├── docs/                   
+│   ├── data/               # nasa.json
+```
+
+The assignment should demonstrate how you work with HTML markup in the index.html, we have implemented Bootstrap (v.4.0.0) in this assignment
 ```zsh
 ├── docs/                   # index.html
 ```
