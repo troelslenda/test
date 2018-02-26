@@ -14,14 +14,26 @@ DGI official front end assignment.
 In this assignment we would like you to show us your work with HTML, styling and javascript.
 Follow the instructions below, you can spend as much time as you want on the assignment, but probably you need to spend atleast a few hours.
 
-We need you to build a small widget, listing images from Nasa Mars Rover photos:
+We need you to build a widget, listing images from Nasa Mars Rover photos:
+
 https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY
 
 The data should be presented as a list. 
-Each list element should contain an image, rover name, camera name and earthdate.
+Each list element should contain an:
+- image
+- rover name
+- camera name
+- earthdate
+
+Assignment tasks:
+- [ ] Create widget/list markup in docs/index.html
+- [ ] Create widget/list styling in scss/partials
+- [ ] Load data from static JSON or WebApi (line 19)
+- [ ] Present Data in DOM.
 
 Possible extensions:
-- Add possibility to filter list by rover or camera
+- [ ] Add Clientside javascript framework (Angular, Vue, React).
+- [ ] Add possibility to filter list by rover or camera
 
 We have placed a static version of the response in docs/data/nasa.json
 ```zsh
