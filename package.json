@@ -1,0 +1,102 @@
+{
+  "name": "DGIFrontEndTest",
+  "title": "DGI Front End Test",
+  "version": "1.0.0",
+  "description": "DGI's official front end test, based on bit and pieces of our scaffold, for building front end assets.",
+  "author": "Daniel Meltesen",
+  "license": "BSD-2-Clause",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bugs": {
+    "url": ""
+  },
+  "faviconConfig": {
+    "faviconOrigin": "./images/dgi-logo.png",
+    "appName": "Dgi App",
+    "appDescription": "DGI frontend Test",
+    "developerName": "DGI IT",
+    "developerURL": "https://www.dgi.dk/",
+    "background": "#ffffff",
+    "url": "https://www.dgi.dk/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "start_url": "/?homescreen=1"
+  },
+  "directories": {
+    "build": {
+      "index_filename": "index",
+      "root": "./build",
+      "docs": "./build/docs",
+      "pages": "./build/pages",
+      "font": "./build/assets/fonts/icon-font",
+      "images": "./build/assets/images",
+      "javascripts": "./build/assets/javascripts",
+      "stylesheets": "./build/assets/stylesheets",
+      "favicons": "./build/assets/images/favicons"
+    },
+    "browsersync": {
+      "index_filepath": "index.html",
+      "server_root": "./build"
+    }
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.6",
+    "babel-preset-es2015": "^6.13.2",
+    "babelify": "^7.3.0",
+    "bootstrap": "4.0.0",
+    "browser-sync": "^2.14.0",
+    "chalk": "^1.1.3",
+    "eslint-config-vue": "^2.0.2",
+    "eslint-plugin-vue": "^2.1.0",
+    "file-system": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-consolidate": "^0.2.0",
+    "gulp-copy": "^1.1.0",
+    "gulp-ejs": "^3.0.0",
+    "gulp-eslint": "^4.0.0",
+    "gulp-front-matter": "^1.3.0",
+    "gulp-iconfont": "^8.0.1",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-marked": "^1.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sass-error": "^1.0.5",
+    "gulp-scss-lint": "^0.4.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-tap": "^0.1.3",
+    "gulp-uglify": "^2.0.0",
+    "highlight.js": "^9.6.0",
+    "image-size": "^0.6.1",
+    "jshint": "^2.9.3",
+    "jshint-stylish": "^2.2.1",
+    "lodash": "4.17.4",
+    "marked": "^0.3.6",
+    "postcss-flexbugs-fixes": "^2.1.0",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.2.2",
+    "streamqueue": "^1.1.1",
+    "util": "^0.10.3",
+    "vueify": "9.4.1"
+  },
+  "dependencies": {
+    "es6-promise": "4.1.1",
+    "gulp-favicons": "^2.2.7",
+    "gulp-fs-cache": "^0.1.0",
+    "gulp-util": "^3.0.8",
+    "vue": "2.5.13",
+    "vuex": "2.5.0"
+  }
+}

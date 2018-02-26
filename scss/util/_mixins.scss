@@ -1,0 +1,76 @@
+/**
+ * Global mixins
+ */
+
+//
+// Layer settings to use with z-index
+//
+$layers: (
+  header: 50,
+  tooltip: 5,
+  cookiebar: 99,
+  lightbox: 100
+) !default;
+
+// .selector {
+//   z-index: z-index(tooltip);
+// }
+@function z-index($name) {
+  @if map-has-key($layers, $name) {
+    @return map-get($layers, $name);
+  } @else {
+    @return 1;
+    @warn "The z-index layout '#{$name}' doesn't exist in $layers";
+  }
+}
+
+//
+// Return the brightness between black:0 and white:255
+//
+@function brightness($color) {
+  @return ((red($color) * 0.299) + (green($color) * 0.587) + (blue($color) * 0.114));
+}
+
+//
+// Return the brightness as a percentage
+//
+@function brightness-percentage($color) {
+  @return percentage(brightness($color)/255);
+}
+
+//
+// Setting multiline text cropping
+//
+@mixin crop-text($font-size: $font-size-base, $lines: 2) {
+  display: -webkit-box;
+  max-height: $font-size-base * $lines;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+}
+
+//
+// Convert to REM
+//
+@function rem-calc($in) {
+  $stripped: $in / ($in * 0 + 1); //strip unit
+  @return (($stripped) / 16) * 1rem; //convert to rem
+}
+
+// Example of usage:
+// @include ellipsis(2em, 2);
+@mixin ellipsis ($max-height, $lines: 2) {
+  // Fallback for non-webkit browsers.
+  // Fallback does not render ellipsis.
+  overflow: hidden;
+  max-height: $max-height;
+
+  // Webkit solution for multiline ellipsis
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+
+  // Solution for Opera
+  text-overflow: -o-ellipsis-lastline;
+}

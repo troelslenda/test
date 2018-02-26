@@ -1,0 +1,9 @@
+/**
+ * Simple style overrides to Bootstrap
+ * More extensive overrides should be placed in separate partials
+ */
+
+// Adding brand background color
+.bg-secondary {
+  background-color: $secondary;
+}

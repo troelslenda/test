@@ -1,0 +1,14 @@
+# Ignore Mac crap
+.sass-cache
+.DS_Store
+
+# Never mind them node modules
+node_modules/
+
+# Never mind that build folder
+build/
+
+# Editor crap
+.tmp/
+.vscode/
+package-lock.json

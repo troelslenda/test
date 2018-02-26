@@ -1,0 +1,37 @@
+/**
+ * Main stylesheet
+ */
+
+//
+// Mixins and helpers
+//
+@import "util/mixins";
+
+//
+// Include Bootstrap's style framework
+//
+@import "bootstrap-variables";
+@import "bootstrap";
+@import "bootstrap-overrides";
+
+//
+// Base styles
+//
+@import "base/fonts";
+@import "base/typography";
+
+//
+// Components
+//
+@import "components/buttons";
+@import "components/image-ratio";
+
+//
+// External vendor styles
+//
+// @import "vendor/xyz";
+
+//
+// Project partials
+//
+@import "partials/demo";
