@@ -28,7 +28,7 @@ Each list element should contain an:
 Assignment tasks:
 - [ ] Create widget/list markup in docs/index.html
 - [ ] Create widget/list styling in scss/partials
-- [ ] Load data from static JSON or WebApi (line 19)
+- [ ] Load data from static JSON or WebApi
 - [ ] Present Data in DOM.
 
 Possible extensions:
