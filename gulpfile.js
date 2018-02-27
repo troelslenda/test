@@ -25,14 +25,6 @@ var SERVER_ROOT = packageJson.directories.browsersync.server_root;
 // Build tasks
 // ---------------------------------------
 
-// Build assets and documentation for production
-gulp.task('build', function() {
-  runSequence(
-    ['styles', 'scripts', 'images', 'favicons'],
-    ['docs']
-  );
-});
-
 // Build assets and documentation for dev
 gulp.task('build:dev', function() {
   runSequence(
@@ -40,7 +32,6 @@ gulp.task('build:dev', function() {
     ['docs']
   );
 });
-
 
 // Dynamic tasks
 // ---------------------------------------
@@ -56,14 +47,6 @@ gulp.task('server:start', function(){
 });
 
 // Watch files for changes, reload browser on change
-gulp.task('watch:start', function() {
-  gulp.watch(WATCH_PATHS.SCSS, ['styles', browserSync.reload]);
-  gulp.watch(WATCH_PATHS.JAVASCRIPTS, ['scripts', browserSync.reload]);
-  gulp.watch(WATCH_PATHS.IMAGES, ['images', browserSync.reload]);
-  gulp.watch(WATCH_PATHS.DOCS, ['docs', browserSync.reload]);
-});
-
-// Watch files for changes, reload browser on change
 gulp.task('watch:dev:start', function() {
   gulp.watch(WATCH_PATHS.SCSS, ['styles:dev', browserSync.reload]);
   gulp.watch(WATCH_PATHS.JAVASCRIPTS, ['scripts:dev', browserSync.reload]);
@@ -75,31 +58,12 @@ gulp.task('watch:dev:start', function() {
 // Default tasks
 // ---------------------------------------
 
-// Run production build, then start watch
-gulp.task('watch', function() {
-  runSequence(
-    ['styles', 'scripts', 'images'],
-    ['docs'],
-    ['watch:start']
-  );
-});
-
-
 // Run dev build, then start watch
 gulp.task('watch:dev', function() {
   runSequence(
     ['styles:dev', 'scripts:dev', 'images'],
     ['docs'],
     ['watch:dev:start']
-  );
-});
-
-// Run dev build, then start browsersync server and watch
-gulp.task('serve', function() {
-  runSequence(
-    ['styles', 'scripts', 'images'],
-    ['docs'],
-    ['server:start', 'watch:start']
   );
 });
 
@@ -113,4 +77,4 @@ gulp.task('serve:dev', function() {
 });
 
 // Run dev build, then start browsersync server and watch
-gulp.task('default', ['build']);
+gulp.task('default', ['build:dev']);

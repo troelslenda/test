@@ -8,6 +8,9 @@ node_modules/
 # Never mind that build folder
 build/
 
+# NPM Crap
+npm-debug.log
+
 # Editor crap
 .tmp/
 .vscode/

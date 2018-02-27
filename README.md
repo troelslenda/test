@@ -130,47 +130,29 @@ The `scss_lint gem` as per the `gulp-scss-lint` requirements
 sudo gem install scss_lint
 ```
 
-#### 3.5 Install node modules
+#### 3.5 On Windows? - else skip to 3.6
+Install all the required tools and configurations using Microsoft's windows-build-tools.
+Open PowerShell (run as administrator) then run following npm install:
+```zsh
+npm install --global --production windows-build-tools
+```
+#### 3.6 Install node modules
 ```zsh
 npm install
 ```
 
 ## 4. Building & compiling
-
-Main gulp tasks are listed below. For further options, see gulp scripts in `gulp/*.js`
-
-#### 4.1 Development tasks:
-
-Build for development (no compression, includes source maps)
-```zsh
-gulp build:dev
-```
+When Everything is installed you can run your first gulp build from the terminal.
+Or you can start your gulp serve:dev to work while everything updates in browser.
 
 Build/watch assets and start browser sync during development
 ```zsh
 gulp serve:dev
 ```
 
-Watch assets for updates (no local server)
+Build assets once
 ```zsh
-gulp watch:dev
-```
-
-#### 4.2 Production tasks:
-
-Build for production (minify assets)
-```zsh
-gulp build
-```
-
-Build/watch assets and start browser sync
-```zsh
-gulp serve
-```
-
-Watch assets for updates (no local server)
-```zsh
-gulp watch
+gulp default
 ```
 
 ## 5. Scss file structure
@@ -184,14 +166,6 @@ scss
 ├── _bootstrap-variables.scss     # bootstrap variable overrides
 ├── _bootstrap.scss               # importing bootstrap framework partials
 ├── main.scss                     # main stylesheet
-```
-
-#### 5.1 Compilation with Gulp
-
-The gulp tasks for scss compilation can be found here
-```zsh
-gulp/
-└── styles.js
 ```
 
 ## 6. Working with javascripts
@@ -211,11 +185,4 @@ var PATHS = [
   'js/vendor/modernizr-custom.js',
   'js/main.js'
 ];
-```
-
-The following gulp tasks are available for ES5 scripts
-
-```zsh
-gulp scripts            # build for production
-gulp scripts:dev        # build for development
 ```
