@@ -12,7 +12,6 @@ export class RoverPhotosService {
   constructor(private http: HttpClient) { }
 
   getImages(rover: string, camera: string, page: number = 1) {
-    console.log('rover', rover, this.serviceURI)
     const params: any = {
       page: page.toString(),
       api_key: environment.nasaApiKey,

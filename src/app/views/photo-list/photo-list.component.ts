@@ -8,7 +8,8 @@ import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-photo-list',
-  templateUrl: './photo-list.component.html'
+  templateUrl: './photo-list.component.html',
+  preserveWhitespaces: true
 })
 export class PhotoListComponent {
 
@@ -24,14 +25,12 @@ export class PhotoListComponent {
     const routeObserverables = combineLatest(this.router.params, this.router.queryParams, (params, queryparams) => ({ params, queryparams}));
 
     routeObserverables.subscribe(allparams => {
-      console.log('allParams', allparams)
       this.selectedRover = allparams.params['id']
       this.isLoading = true;
       this.roverData = this.roverdata.getRoverData(this.selectedRover)
       this.roverData.subscribe(res => {
         // todo: Should be moved to service.
         const solMeta = res.photo_manifest.photos.filter(res => res.sol === environment.sol)
-        console.log(solMeta)
         this.cameras = solMeta[0].cameras;
         this.numberOfPhotos = solMeta[0].total_photos;
       })

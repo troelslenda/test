@@ -1,5 +1,7 @@
 // Import variables. We need colors and zindex.
-@import "scss/bootstrap-variables";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
 .backdrop {
     position: fixed;
     top: 0;
