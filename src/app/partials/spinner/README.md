@@ -1,1 +1,1 @@
-Spinner from https://loading.io/css/
+This spinner is provided by https://loading.io/css/

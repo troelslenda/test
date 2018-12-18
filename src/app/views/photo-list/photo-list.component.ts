@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RoverPhotosService } from 'src/app/services/rover-photos.service';
 import { RoverAbilitiesService } from 'src/app/services/rover-abilities.service';
@@ -6,10 +6,9 @@ import { combineLatest } from 'rxjs';
 
 @Component({
   selector: 'app-photo-list',
-  templateUrl: './photo-list.component.html',
-  styleUrls: ['./photo-list.component.scss']
+  templateUrl: './photo-list.component.html'
 })
-export class PhotoListComponent implements OnInit {
+export class PhotoListComponent {
 
   photos: any;
   roverData: any;
@@ -21,7 +20,6 @@ export class PhotoListComponent implements OnInit {
   constructor(private photoservice: RoverPhotosService,private roverdata: RoverAbilitiesService, private router: ActivatedRoute) {
     
     const sol = 1000;
-
     const routeObserverables = combineLatest(this.router.params, this.router.queryParams, (params, queryparams) => ({ params, queryparams}));
 
     routeObserverables.subscribe(allparams => {
@@ -36,20 +34,9 @@ export class PhotoListComponent implements OnInit {
       })
       let camera = allparams.params['camera'] || 'all'
       let page = allparams.queryparams.page || 1;
-      console.log(page)
-  
+
       this.photos = this.photoservice.getImages(this.selectedRover, camera, page)
       this.photos.subscribe(res => this.isLoading = false);
     });
-
-
-    this.router.params.subscribe(params => {
-      
-    })
   }
-
-
-  ngOnInit() {
-  }
-
 }

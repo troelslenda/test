@@ -3,8 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-pager',
-  templateUrl: './pager.component.html',
-  styleUrls: ['./pager.component.scss']
+  templateUrl: './pager.component.html'
 })
 export class PagerComponent implements OnInit, OnChanges {
 
@@ -13,7 +12,7 @@ export class PagerComponent implements OnInit, OnChanges {
   currentPage: number;
   showPager: boolean;
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   pageChange() {
     // TODO: Should probably emit this value instead and let the parent
@@ -32,7 +31,6 @@ export class PagerComponent implements OnInit, OnChanges {
     this.route.queryParams.subscribe(params => {
       this.currentPage = params['page'] || 1;
     })
-   
   }
   ngOnChanges() {
     this.showPager = false;
