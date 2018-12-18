@@ -1,7 +1,38 @@
-<p>
-  intro works!
-</p>
+<h1>
+  Mars Rover Photos
+</h1>
+<h2>DGI Frontend assignment</h2>
 
-Limitations
+<p>Start using the application by selecting a Rover above.</p>
 
-When filtering based on camera, there's no way of knowing how many entries there are in the resultset.
+
+<p>I started by planning the app based on this thought process.</p>
+
+<h3>Thought process and work plan</h3>
+
+<ol>
+  <li>Read through repository documentation and get a good understanding of structure.</li>
+  <li>Investergate API capabilities. <a href="https://api.nasa.gov/api.html#MarsPhotos">https://api.nasa.gov/api.html#MarsPhotos</a>
+    <ul>
+      <li>Should it/could it split/paginate?</li>
+      <li>Angular 7 virtual scroll?</li>
+    </ul>
+  </li>
+ <li>Bootstrap Angular in project and migrate configuration
+    <ul>
+      <li>Router for deeplinking to filter?</li>
+    </ul>
+  </li>
+  <li>ngBootstrap and scss</li>
+  <li>Implement list with data.</li>
+  <li>Find inspiration on how to theme. Perhaps some list / gallery view on dgi.dk</li>
+  <li>Theme the list.</li>
+  <li>Filtering. Should we do buttons or dropdowns? Depends on how many options there are.</li>
+</ol>
+<h3>Performance</h3>
+<p>It takes quite long time to render the markup for the +800 photos that was taken on sol 1000 by Curiosity. Initially I wanted to use the new Angular 7 virtual scroll but went with traditional paginaton instead to facilitate bootstrap features.</p>
+
+<h3>Findings</h3>
+<p>As described in the task defintion we set <b>sol</b> (Martian rotations) to 1000 for each query.</p>
+<p>Unfortunally Opportunity and Spirit took few photos on their 1000 sol. It is possible to implement a date picker and provide earth_date, but I believe it's out of scope.</p>
+<p>The API does not provide information on how many photos there is in a resultset when pagination and camera filtering is used. <span class="text-danger">This bug is not tackled</span></p>
