@@ -1,0 +1,5 @@
+<div class="text-center">
+  Theres a total of {{ total}} photos in your selection.  
+</div>
+
+<ngb-pagination *ngIf="showPager" [collectionSize]="total" [pageSize]="itemsPrPage" [(page)]="currentPage" [maxSize]="5" [boundaryLinks]="true" (pageChange)=pageChange()></ngb-pagination>

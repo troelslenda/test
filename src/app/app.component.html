@@ -1,19 +1,22 @@
 <nav class="navbar navbar-dark bg-dark navbar-expand-md">
     <div class="container">
         <a class="navbar-brand" href="#">
-            <img src="/assets/images/dgi-logo.png" height="30" class="d-inline-block align-top" alt=""> Mars Rovers Demo
+            <img src="/assets/images/dgi-logo.png" height="30" class="d-inline-block align-top" alt=""> Mars Rovers
+            Demo
         </a>
     </div>
 </nav>
 
-
 <section>
     <div class="container">
-        <div class="page-text text-center">           
-             <!-- <h1>DGI Front end assignment</h1>
-            <p>Begin your assignment here, consult the readme.md for instructions</p> -->
+        <div class="page-text text-center mb-1">
+            <h2>Choose a Rover</h2>
+            <a class="btn btn-primary btn-sm" [routerLink]="['/photos/curiosity']" routerLinkActive="active" role="button">Curiosity</a>
+            <a class="btn btn-primary btn-sm" [routerLink]="['/photos/opportunity']" routerLinkActive="active" role="button">Opportunity</a>
+            <a class="btn btn-primary btn-sm" [routerLink]="['/photos/spirit']" routerLinkActive="active" role="button">Spirit</a>
         </div>
     </div>
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
 </section>
-
-

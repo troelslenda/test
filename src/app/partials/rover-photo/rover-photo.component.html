@@ -1,0 +1,10 @@
+<div class="rover-photo">
+    <div class="content d-flex justify-content-center align-items-center">
+        <img [src]="photo.image" class="img-fluid">
+        <div class="overlay">
+            <div class="">{{photo.earth_date | date:'fullDate'}}</div>
+            <div class="extra"><i class="fa fa-truck"></i> {{photo.rover}}</div>
+            <div class="extra"><i class="fa fa-camera-retro"></i> {{photo.camera}}</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="container" *ngIf="cameras">
+    <div class="text-center mb-1">
+        <h2>Filter by camera</h2>
+        <span *ngFor="let camera of cameras"><a class="btn btn-primary btn-sm" routerLinkActive="active" [routerLink]="['/', 'photos', selectedRover, camera]">{{camera}}</a>
+        </span>
+    </div>
+</div>
+<div *ngIf="isLoading">
+    <app-spinner></app-spinner>
+</div>
+<hr>
+<div *ngIf="numberOfPhotos" class="d-flex justify-content-center">
+    <app-pager [total]="numberOfPhotos"></app-pager>
+</div>
+
+<div *ngIf="photos | async as photos">
+    <div class="container">
+        <div class="row">
+            <app-rover-photo class="col-xs-12 col-md-6 col-lg-3 mb-4" *ngFor="let photo of photos" [photo]="photo"></app-rover-photo>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="numberOfPhotos"  class="d-flex justify-content-center">
+    <app-pager [total]="numberOfPhotos"></app-pager>
+</div>

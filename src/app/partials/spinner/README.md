@@ -1,0 +1,1 @@
+Spinner from https://loading.io/css/

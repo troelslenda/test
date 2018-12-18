@@ -1,6 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "../scss/bootstrap-variables";
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+$theme-colors: (
+  "primary": $teal
+);
+$enable-rounded: false;
+$pagination-active-bg: $teal;
+$pagination-active-border-color: $teal;
+$pagination-color: $teal;
+
+
+$body-bg: whiteSmoke;
+
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../scss/bootstrap-overrides";
 
