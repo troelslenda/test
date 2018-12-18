@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { RoverPhotosService } from 'src/app/services/rover-photos.service';
 import { RoverAbilitiesService } from 'src/app/services/rover-abilities.service';
 import { combineLatest } from 'rxjs';
+import { environment } from '../../../environments/environment';
+
 
 @Component({
   selector: 'app-photo-list',
@@ -19,7 +21,6 @@ export class PhotoListComponent {
 
   constructor(private photoservice: RoverPhotosService,private roverdata: RoverAbilitiesService, private router: ActivatedRoute) {
     
-    const sol = 1000;
     const routeObserverables = combineLatest(this.router.params, this.router.queryParams, (params, queryparams) => ({ params, queryparams}));
 
     routeObserverables.subscribe(allparams => {
@@ -28,7 +29,9 @@ export class PhotoListComponent {
       this.isLoading = true;
       this.roverData = this.roverdata.getRoverData(this.selectedRover)
       this.roverData.subscribe(res => {
-        const solMeta = res.photo_manifest.photos.filter(res => res.sol === sol)
+        // todo: Should be moved to service.
+        const solMeta = res.photo_manifest.photos.filter(res => res.sol === environment.sol)
+        console.log(solMeta)
         this.cameras = solMeta[0].cameras;
         this.numberOfPhotos = solMeta[0].total_photos;
       })

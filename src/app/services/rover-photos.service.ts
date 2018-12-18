@@ -16,7 +16,7 @@ export class RoverPhotosService {
     const params: any = {
       page: page.toString(),
       api_key: environment.nasaApiKey,
-      sol: '1000'
+      sol: environment.sol
     }
     if (camera !== 'all') {
       params.camera = camera;

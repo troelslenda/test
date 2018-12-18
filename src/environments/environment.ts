@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  nasaApiKey: "wDNtDMPJKuFGxxoO5h3OuYikDua1dIn7Tu32rxLM"
+  nasaApiKey: "wDNtDMPJKuFGxxoO5h3OuYikDua1dIn7Tu32rxLM",
+  sol: 1000
 };
 
 /*
