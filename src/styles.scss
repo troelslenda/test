@@ -8,14 +8,17 @@ $theme-colors: (
   "primary": $teal
 );
 $enable-rounded: false;
+
+// These overrides where nessecary. Maybe ngbootstraps widgets do not play
+// nicely with theme-colors? todo: investergation would be a good idea.
 $pagination-active-bg: $teal;
 $pagination-active-border-color: $teal;
 $pagination-color: $teal;
 
-
 $body-bg: whiteSmoke;
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
-@import "../scss/bootstrap-overrides";
+@import "./bootstrap_overrides";
 
+// It failed trying to import the SCSS version. In this project it's no problem.
 @import "../node_modules/font-awesome/css/font-awesome.min.css";
